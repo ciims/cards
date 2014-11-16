@@ -34,11 +34,17 @@ foreach ($json as $key=>$obj)
 				if (is_file($file))
 					unlink($file);
 			}
+
+			echo "Creating $key#$version directory\n";
 		}
 		else
+		{
+			echo "$key#$version is already installed\n";
 			continue;
+		}
 	}
 
+	echo "Downloading $key#$version...\n";
 	// Download the zip archive of either the branch of tag
 	if ((substr($version, 0, 4)) == "dev-")
 	{
@@ -50,7 +56,10 @@ foreach ($json as $key=>$obj)
 
 	// If a download error occured, continue with the next card
 	if ($archive['error'] != "")
+	{
+		echo "Error downloading: $key#$version - skipping\n";
 		continue;
+	}
 
 	// Write the zip file to disk
 	file_put_contents($cardDir.'.zip', $archive['archive']);
@@ -59,6 +68,7 @@ foreach ($json as $key=>$obj)
 	$zip = new ZipArchive;
 	if ($zip->open($cardDir.'.zip') === TRUE)
 	{
+		echo "Installing $key#$version...\n";
 		$folder = NULL;
 		for($i = 0; $i < $zip->numFiles; $i++)
 		{
@@ -77,7 +87,10 @@ foreach ($json as $key=>$obj)
     	unlink($cardDir.'.zip');
 	}
 	else
+	{
+		echo "Failed to extract $key#$version - skipping\n";
 		continue;
+	}
 }
 
 /**
