@@ -19,7 +19,7 @@ To contribute to this repository, first build  a dashboard card (see https://git
 }
 ```
 
-The ```repository``` field can be any publicly available git repository, and the ```version``` should correspond to a published git tag.
+The ```repository``` field can be any publicly available github repository, and the ```version``` should correspond to a published git tag.
 
 ## DISCLAIMER
 By submitting your card to this repository, you agree to allow CiiMS to deal with 
