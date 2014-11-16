@@ -21,6 +21,23 @@ To contribute to this repository, first build  a dashboard card (see https://git
 
 The ```repository``` field can be any publicly available github repository, and the ```version``` should correspond to a published git tag.
 
+## Run your own card repository
+Want to run your own card repository for CiiMS instances you manage? CiiMS now lets you specify a custom card repository endpoint and run a private set of cards.
+
+1. Fork this repository
+2. Clone the forked repository to your server
+3. Edit index.json as you see fit
+4. Run ```php parser.php``` to initially populate the database
+5. Add ```parser.sh``` to an hourly crontab on your system
+6. Make the cloned folder accessible via HTTP
+7. In CiiMS#/protected/config/main.php, add the following key value pair to the ```params``` section.
+```
+'cards' => 'http://your-endpoint.tld/path/to/repo'
+```
+8. Clear CiiMS' cache
+
+CiiMS will now use your custom endpoint for cards
+
 ## DISCLAIMER
 By submitting your card to this repository, you agree to allow CiiMS to deal with 
 your card without restriction, including without limitations to the right to use, 
