@@ -68,23 +68,21 @@ foreach ($json as $key=>$obj)
 	$zip = new ZipArchive;
 	if ($zip->open($cardDir.'.zip') === TRUE)
 	{
+		$parentDir = $cardDir . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
 		echo "Installing $key#$version...\n";
+		$zip->extractTo($parentDir);
+
 		$folder = NULL;
-		for($i = 0; $i < $zip->numFiles; $i++)
-		{
-        	$filename = $zip->getNameIndex($i);
-       		$fileinfo = pathinfo($filename);
-       		$data = explode('/', $filename);
-       		$folder = $data[0];
-       		// Write just the file to disk
-        	copy("zip://".$cardDir.".zip#".$filename, $cardDir.'/'.$fileinfo['basename']);
-    	}  
+    	$filename = $zip->getNameIndex(0);
+   		$fileinfo = pathinfo($filename);
+   		$data = explode('/', $filename);
+   		$folder = $data[0];
 
-    	$zip->close();
+		$zip->close();
 
-    	// Remove the ZIP file, and the parent folder github makes
-    	unlink($cardDir.'/'.$folder);
-    	unlink($cardDir.'.zip');
+		rename($parentDir . $folder, $parentDir . $version);
+		// Remove the ZIP file, and the parent folder github makes
+		unlink($cardDir.'.zip');
 	}
 	else
 	{
