@@ -28,7 +28,7 @@ Want to run your own card repository for CiiMS instances you manage? CiiMS now l
 2. Clone the forked repository to your server
 3. Edit index.json as you see fit
 4. Run ```php parser.php``` to initially populate the database
-5. Add ```parser.sh``` to an hourly crontab on your system
+5. Add ```parser.php``` to an hourly crontab on your system
 6. Make the cloned folder accessible via HTTP
 7. In CiiMS#/protected/config/main.php, add the following key value pair to the ```params``` section.
 ```
