@@ -66,6 +66,7 @@ foreach ($json as $key=>$obj)
 
 	// Extract the zip file
 	$zip = new ZipArchive;
+    
 	if ($zip->open($cardDir.'.zip') === TRUE)
 	{
 		$parentDir = $cardDir . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
@@ -87,6 +88,8 @@ foreach ($json as $key=>$obj)
 	else
 	{
 		echo "Failed to extract $key#$version - skipping\n";
+        rmdir($cardDir);
+        unlink($cardDir.'.zip');
 		continue;
 	}
 }
