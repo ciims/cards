@@ -1,7 +1,7 @@
 {
 	"WeatherCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-weather-card2",
-		"version": "0.0.7"
+		"version": "0.0.8"
 	},
 	"AnalyticsCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-analytics-card",
