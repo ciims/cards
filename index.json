@@ -6,5 +6,9 @@
 	"AnalyticsCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-analytics-card",
 		"version": "0.0.2"
+	},
+	"NewRelicResponseTimeCard": {
+		"repository": "https://github.com/charlesportwoodii/ciims-newrelic-responsetime-card",
+		"version": "0.0.1"
 	}
 }
