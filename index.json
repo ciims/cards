@@ -14,5 +14,5 @@
 	"WeatherCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-weather-card2",
 		"version": "0.0.8"
-	},
+	}
 }
