@@ -3,6 +3,10 @@
 		"repository": "https://github.com/charlesportwoodii/ciims-analytics-card",
 		"version": "0.0.2"
 	},
+	"GithubCard": {
+		"repository": "https://github.com/charlesportwoodii/ciims-github-card",
+		"version": "0.0.1"
+	},
 	"NewRelicResponseTimeCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-newrelic-responsetime-card",
 		"version": "0.0.1"
