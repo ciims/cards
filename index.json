@@ -7,6 +7,10 @@
 		"repository": "https://github.com/charlesportwoodii/ciims-github-card",
 		"version": "0.0.1"
 	},
+	"GithubUserCard": {
+		"repository": "https://github.com/charlesportwoodii/ciims-github-user-card",
+		"version": "0.0.1"
+	},
 	"NewRelicResponseTimeCard": {
 		"repository": "https://github.com/charlesportwoodii/ciims-newrelic-responsetime-card",
 		"version": "0.0.1"
